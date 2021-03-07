@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    width: 900px;
+    margin: 10px auto;
+}
+
+.news {
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+.news:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.news h2 {
+    font-size: 17px;
+}
+
+.newss p {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.btn-wrap {
+    text-align: center;
+}
+
+#btn {
+    border: 2px solid transparent;
+    outline: none;
+    padding: 7px 19px;
+    background-color: blue;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 2px;
+    transition: all 0.15s linear;
+}
+
+#btn:hover {
+    border-color: blue;
+    background-color: #fff;
+    color: blue;
+    cursor: pointer;
+}

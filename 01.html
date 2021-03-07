@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            var position = 0;
+            $(".wrap").load('data.php', {'position': 0});
+            $.post('data.php')
+
+            $("#btn").on("click", function() {
+                position += 1;
+
+                $.ajax({
+                    url: 'data.php',
+                    type: "POST",
+                    data: {'position': position},
+                    success: function(data) {
+                        $(".wrap .news:last-child").after(data);
+                    }
+                });
+
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="news">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga quibusdam, dolore officia in quis aspernatur aliquid excepturi minus libero earum accusantium provident sit cupiditate necessitatibus mollitia temporibus ducimus quae.</p>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <button id="btn">Load more</button>
+    </div>
+</body>
+</html>
